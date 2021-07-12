@@ -1,0 +1,65 @@
+class Card{
+	constructor(name,cost){
+	this.name=name;
+	this.cost=cost
+}
+
+ 
+}
+
+
+class Unit extends Card{
+	constructor(name,cost,power,resilience){
+  super(name,cost);
+  this.name=name;
+  this.cost=cost;
+  this.power=power;
+  this.resilience=resilience;
+}	
+
+attack(target){
+this.resilience -=target.power;
+console.log( `oooh i loss ${this.resilience}`);
+}
+
+ 
+}
+let Red_Bilt= new Unit("Red Belt Ninja	",3,3,4);
+let Black_Bilt= new Unit("black Belt Ninja",4,5,4);
+   
+
+
+
+
+
+class Effect extends Card{
+		constructor(name,cost,text,stat,magnitude){
+    super(name,cost);
+    this.text=text;
+    this.stat=stat;
+    this.magnitude=magnitude;  
+    }
+    
+     play( target ) {
+        if( target instanceof Unit ) {
+        	if(this.stat =="resilience"){
+          target.resilience+=this.magnitude;
+          }
+          else if (this.stat =="power"){
+            target.resilience +=this.magnitude;
+            console.log(target.resilience);
+        } else {
+            throw new Error( "Target must be a unit!" );
+        }
+    }
+    
+    
+    }}
+ let Hard_Algorithm= new  Effect("Hard Algorithim",2,"increase target's resilience by 3","resilience",+3); 
+ let Un_P_R= new Effect("Unhandled Promise Rejectio",1,"reduce target's resilience by 2","resilience",-2); 
+ let p_p= new  Effect("Pair Programming	",3,"	increase target's power by 2","power",+2); 
+
+ Un_P_R.play(Red_Bilt);
+ p_p.play(Red_Bilt);
+ 
+Red_Bilt.attack(Black_Bilt);
