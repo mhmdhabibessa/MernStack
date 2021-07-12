@@ -1,0 +1,29 @@
+// parent Ninja class
+class Ninja {
+    constructor(name ,health) {
+        this.name = name;
+        this.health = health;
+        this.speed = 3;
+        this.strength = 3;
+    }
+    sayName() {
+        this.miles += 10;
+        console.log(`${ this.constructor.name } `);
+    }
+
+   showStats(){	
+console.log(`${ this.constructor.name } `);
+console.log(`${ this.constructor.health} `);
+console.log(`${ this.constructor.speed } `);
+console.log(`${ this.constructor.strength } `); 
+	
+}
+drinkSake(){
+	this.speed+=10;
+	
+}
+
+const ninja1 = new Ninja("Hyabusa");
+ninja1.sayName();
+ninja1.showStats();
+}
