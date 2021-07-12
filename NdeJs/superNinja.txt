@@ -1,42 +1,54 @@
 // parent Ninja class
 class Ninja {
-    constructor(health,speed,strength ,name) {
+    constructor(name,health) {
         this.name = name;
         this.health = health;
         this.speed = 3;
         this.strength = 3;
     }
     sayName() {
-        this.miles += 10;
-        console.log(`${ this.constructor.name } `);
+        
+        console.log(`${this.name} `);
     }
 
-   showStats(){	
-console.log(`${ this.constructor.name } `);
-console.log(`${ this.constructor.health} `);
-console.log(`${ this.constructor.speed } `);
-console.log(`${ this.constructor.strength } `); 
-	
-}
+showStats(){	
+   console.log(`${this.name} `);
+   console.log(`${ this.health} `);
+   console.log(`${ this.speed } `);
+   console.log(`${ this.strength } `); 
+     
+   }
 drinkSake(){
-	this.speed+=10;
+	this.health+=10;
+	console.log(`${ this.health} `);
+	
 	
 }
 
-const ninja1 = new Ninja("Hyabusa");
-ninja1.sayName();
-ninja1.showStats();
 }
-
+/* const ninja1 = new Ninja("Hyabusa",10);
+ninja1.sayName();
+ninja1.showStats(); */
 class sensei extends Ninja{
-    constructor(health,speed,strength ,name,widsom) {
-	super("200", "10","10", name);
-	this.wisdom=10 ;
+    constructor(name) {
+  super(name);
+  this.health=200;
+  this.strength=10;
+  this.speed=10;
+  this.wisdom=10 ;
          }
     // simple function in the child class
     speakWisdom() {
         // by using super, we can call the parent method
-        const message = super.drinkSake();
-        console.log(message);
+         super.drinkSake();
+        console.log("What one programmer can do in one month, two programmers can do in two months");
     }
-
+    
+    }
+    // example output
+const superSensei = new sensei("Master Splinter");
+superSensei.speakWisdom();
+// -> "What one programmer can do in one month, two programmers can do in two months."
+superSensei.showStats();
+// -> "Name: Master Splinter, Health: 210, Speed: 10, Strength: 10"
+    
