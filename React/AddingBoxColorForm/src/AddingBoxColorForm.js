@@ -3,6 +3,8 @@ import { useState } from "react";
 const AddingBoxColorForm = () => {
 
     const [color, setColor] = useState();
+    const[width ,setWidht] = useState();
+    const[allwidth ,setAllWidht] = useState([]);
 
     const [allcolor,setAllcolor]= useState([]);
    
@@ -11,6 +13,8 @@ const AddingBoxColorForm = () => {
             ...color,
             [e.target.name]: e.target.value
         })
+        setWidht({...width,[e.target.name]:e.target.value})
+
 
 
     }
@@ -21,9 +25,13 @@ const AddingBoxColorForm = () => {
         setColor({
             colorbox:""
         })
+        setAllWidht([...allwidth,width])
+        setWidht ({
+            widhtBox:""
+        })
         
     }
-
+   
 
     
     
@@ -38,12 +46,19 @@ const AddingBoxColorForm = () => {
                 name = 'colorbox'
             >
             </input>
+
+            <input 
+                placeholder="Enter your widht Box here" 
+                onChange={onsetColor}
+                name="widhtBox"
+            
+            ></input>
             <input type="submit" />
         </form>
         {allcolor.map(
             (fillBox) =>{
                 return (
-                <div width="150px" style={{ backgroundColor:fillBox.colorbox , height:'150px',width:'150px' }}>  
+                <div  style={{ backgroundColor:fillBox.colorbox , height:'150px',width:fillBox.widhtBox }}>  
             
                 </div>
                 )
