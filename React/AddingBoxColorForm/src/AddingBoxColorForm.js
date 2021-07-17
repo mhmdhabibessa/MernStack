@@ -55,7 +55,7 @@ const AddingBoxColorForm = () => {
             ></input>
             <input type="submit" />
         </form>
-        {allcolor.map(
+        {allwidth.map(
             (fillBox) =>{
                 return (
                 <div  style={{ backgroundColor:fillBox.colorbox , height:'150px',width:fillBox.widhtBox }}>  
