@@ -29,7 +29,7 @@ const AddingBoxColorForm = () => {
         setWidht ({
             widhtBox:""
         })
-        
+        x.target.value="" ;       
     }
    
 
