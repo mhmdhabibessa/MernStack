@@ -26,7 +26,6 @@
 
 .App-link {
   color: #61dafb;
-  color: rgb(105, 143, 248);
 }
 
 @keyframes App-logo-spin {
@@ -36,22 +35,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-input[type=text] {
-  width: 40%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-
-.line-throw {
-  text-decoration: line-through;
-}
-
-.bold {
-font-weight: bold;
-}
-
-.italics {
-font-style: italic;
 }

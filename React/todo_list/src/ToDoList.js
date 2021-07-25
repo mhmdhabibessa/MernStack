@@ -17,6 +17,8 @@ const  handleSubmit = (e) => {
         e.preventDefault();
         if(msg.length ===0)
         return;
+        // if(msg.target.value ===e.target.value)
+        // return;
         setAllmsg([...allmsg,msg])
         console.log(allmsg)
         setMsg("")
