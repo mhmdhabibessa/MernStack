@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+        import { Paper } from '@material-ui/core';
 
 
 const  PersonForm = (props) => {
@@ -43,6 +44,12 @@ const  PersonForm = (props) => {
             </p>
             <input type="submit"/>
         </form>
+
+...
+                <Paper elevation={3}>
+            <p>Some text here</p>
+                </Paper>
+
       
         </>
     )
