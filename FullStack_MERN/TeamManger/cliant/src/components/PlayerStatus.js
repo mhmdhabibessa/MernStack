@@ -8,7 +8,8 @@ import { Link, navigate } from '@reach/router'
 const PlayerStatus = (props) => {
   const { id, name } = props;
   const [players, setPlayers] = useState([])
-  const [colorstate,setColorstate] =useState("") 
+
+
   
   useEffect(() => {
     axios.get("http://localhost:8000/api/players/")
@@ -21,20 +22,7 @@ const PlayerStatus = (props) => {
     
 // }
  
- const  cahngeColor = ()=> {
-     
-        setColorstate('red')
-     }
-     
-     const  cahngeColor1 = ()=> {
-     
-        setColorstate('green')
-     }
-     const  cahngeColor2 = ()=> {
-     
-        setColorstate('yellow')
-     }
-     
+ 
 
 
   return (
@@ -56,9 +44,9 @@ const PlayerStatus = (props) => {
           return (<tr>
             <td key={index}>{player.name}</td>
            
-            <td><Button  style={{backgroundColor: colorstate }} key={index} value="Playing"  onClick={()=>{cahngeColor()}} > Playing </Button>
-              <Button style={{backgroundColor: colorstate }} key={index}  onClick={(e)=>{cahngeColor1()}} > NotPlaying </Button> 
-              <Button style={{backgroundColor: colorstate }} key={index} onClick={(e)=>{cahngeColor2()}} > Undecide </Button> </td>
+            <td><Button  style={{backgroundColor: "white" }}   onClick={(e)=>{ (e.target.style.backgroundColor='red')}} > Playing </Button>
+              <Button style={{backgroundColor: 'white' }}   onClick={(e)=>{ (e.target.style.backgroundColor='green')}} > NotPlaying </Button> 
+              <Button style={{backgroundColor: 'white' }}  onClick={(e)=>(e.target.style.backgroundColor='yellow')} > Undecide </Button> </td>
 
           </tr>   
           
