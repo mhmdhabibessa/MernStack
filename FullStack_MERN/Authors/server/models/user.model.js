@@ -3,7 +3,7 @@ const AuthorSchema = new mongoose.Schema({
     name: {
         type:String ,
         require :[true, "Author connot be empty"],
-		minlength: [3, "The min length should be more than 3"]
+		minlength: [3, "The min length should be more than 3"]  
     }
     
 	

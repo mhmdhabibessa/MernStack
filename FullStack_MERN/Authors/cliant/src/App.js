@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import  Main from './Views/Main'
 import { Router } from '@reach/router';
 import TabelsAuthor from './components/TabelsAuthor';
 import UpdateAuthor from './components/UpdateAuthor' 
+import AuthorForm from './components/AuthorForm'
 function App() {
 
   
@@ -14,7 +14,7 @@ function App() {
     <header className="App-header">
 
     <Router>
-          <Main  path="/new" />
+          <AuthorForm path="/new" />
           <TabelsAuthor path="/"/>
           <UpdateAuthor path='/update/:id'/>
 

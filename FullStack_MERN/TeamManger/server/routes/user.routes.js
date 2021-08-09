@@ -6,7 +6,7 @@ module.exports = function(app){
     app.get('/api/players',PlayerController.getAllPlayer)
     app.get('/api/Player/:id', PlayerController.getPlayer);
     app.delete('/api/players/delete/:id',PlayerController.deletePlayer);
-
+    app.put('/api/player/:id' ,PlayerController.updatestatus)
 
 
 }

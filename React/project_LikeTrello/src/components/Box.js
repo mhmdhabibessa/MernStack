@@ -18,11 +18,11 @@ const Box = (props) => {
         width: "250px"
     }
 
-    const getText = (value) => {
-        return value.status === "toDo"
-                ? "Start Doing"
-                : value.status === "doning" ? "Done with This Task" : "Remove Task"
-    }
+        const getText = (value) => {
+            return value.status === "toDo"
+                    ? "Start Doing"
+                    : value.status === "doning" ? "Done with This Task" : "Remove Task"
+        }
 
     return (
         <div style={boxStyle}>

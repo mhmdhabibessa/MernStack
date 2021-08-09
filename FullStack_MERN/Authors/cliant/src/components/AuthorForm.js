@@ -14,13 +14,14 @@ const  AuthorForm = (props) => {
         axios.post('http://localhost:8000/api/new', {
             name,
         })
-            .then(res=>console.log(res))
+            .then(()=>navigate('/'))
             .catch(err => {
                 const errStr = err.response.data.errors.name.message
                 console.log(err.response.data.errors.name.message)
                 setErrsubmit(errStr);
             })
-            navigate('/')
+
+            
     }
     return (
         <>
@@ -35,8 +36,10 @@ const  AuthorForm = (props) => {
                 <input type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                 <p style={{color:"red"}} > {errsubmit}  </p>
             </p>
+            
         
             <input type="submit"/>
+            <br/> ::::::: {name}
         </form>
 
 
